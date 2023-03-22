@@ -2,6 +2,7 @@
   "name": "susdc-conversion",
   "version": "0.1.0",
   "description": "Gluwa app to convert sUSDC-G to BTC",
+  "proxy": "https://sc-dapp-api-test-function.azurewebsites.net/api/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gluwa/Gluwa-sUSDCG-Convert-App.git"
