@@ -33,6 +33,8 @@ export const getContractPk = () => {
 
       const contractABI = Abi.SUSDCG;
       const contractInstance = new ethers.Contract(contractData.addressPerNetwork[0].address, Abi.SUSDCG, signer);
+      console.log(REACT_APP_LUNIVERSE_RPC_MAINNET)
+      console.log(contractInstance)
       return { contractInstance, contractABI };
     } catch (err) {
       console.log(err);
