@@ -1,0 +1,11 @@
+export const schedule = [
+    {'lowerLimit': 0, 'upperLimit':10000, 'fee': 0.004},
+    {'lowerLimit': 10000, 'upperLimit':50000, 'fee': 0.003},
+    {'lowerLimit': 50000, 'upperLimit':100000, 'fee': 0.0025},
+    {'lowerLimit': 100000, 'upperLimit':1000000, 'fee': 0.002},
+    {'lowerLimit': 1000000, 'upperLimit':5000000, 'fee': 0.0015},
+    {'lowerLimit': 5000000, 'upperLimit':10000000, 'fee': 0.001},
+    {'lowerLimit': 10000000, 'upperLimit':50000000, 'fee': 0.0008},
+    {'lowerLimit': 50000000, 'upperLimit':100000000, 'fee': 0.0005},
+    {'lowerLimit': 100000000, 'upperLimit':500000000, 'fee': 0.0004},
+    {'lowerLimit': 500000000, 'upperLimit':-1, 'fee': 0.0003},];
