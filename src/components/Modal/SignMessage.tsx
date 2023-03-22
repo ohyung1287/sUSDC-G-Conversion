@@ -159,6 +159,7 @@ function SendMessageSlack(message, closeModal) {
   fetch(`${PRIMARY_ENDPOINT}${DB_SIGN_TRANSFER}`, {
     method: "POST",
     body: JSON.stringify(message),
+    headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
   }).then((res) => {
     if (res.ok) {
       closeModal();
