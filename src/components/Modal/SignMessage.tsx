@@ -10,7 +10,7 @@ import { PRIMARY_ENDPOINT, DB_SIGN_TRANSFER } from "constants/endpoints";
 import { AmountButton } from "components/Button";
 import { GEMINI_PRICE_API, BTC_NETWORK_FEE_API } from "constants/endpoints";
 import { schedule } from "../../constants/gemini";
-
+import { REACT_APP_LUNIVERSE_RPC_MAINNET } from "../../constants/general";
 interface ApproveTxDetail {
   spender: string;
   amount: string;
@@ -87,7 +87,7 @@ export function SignMessage(props: Props) {
         [contract.contractInstance.address, address, value.spender, value.amount, 0, nonce]
       );
       if (mySigner) {
-        const provider = new ethers.providers.JsonRpcBatchProvider(process.env.REACT_APP_LUNIVERSE_RPC_MAINNET);
+        const provider = new ethers.providers.JsonRpcBatchProvider(REACT_APP_LUNIVERSE_RPC_MAINNET);
         const signer = new ethers.Wallet(mySigner, provider);
         signer.signMessage(hash).then((data) => {
           message.sig = data;

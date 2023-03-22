@@ -22,6 +22,7 @@ import {
   sepolia,
 } from "wagmi/chains";
 
+import { REACT_APP_LUNIVERSE_RPC_MAINNET } from "./general";
 import { NetworkDetail } from "../models/Network";
 
 const NETWORKS: NetworkDetail[] = [
@@ -153,10 +154,10 @@ const luniverseProd: Chain = {
   },
   rpcUrls: {
     default: {
-      http: [process.env.REACT_APP_LUNIVERSE_RPC_MAINNET],
+      http: [REACT_APP_LUNIVERSE_RPC_MAINNET],
     },
     public: {
-      http: [process.env.REACT_APP_LUNIVERSE_RPC_MAINNET],
+      http: [REACT_APP_LUNIVERSE_RPC_MAINNET],
     },
   },
 };
@@ -185,6 +186,6 @@ export const wagmiNetworks: Chain[] = [
 ];
 
 if (process.env.REACT_APP_LUNIVERSE_RPC_TESTNET) wagmiNetworks.push(luniverseTestnet);
-if (process.env.REACT_APP_LUNIVERSE_RPC_MAINNET) wagmiNetworks.push(luniverseProd);
+if (REACT_APP_LUNIVERSE_RPC_MAINNET) wagmiNetworks.push(luniverseProd);
 
 export default NETWORKS;

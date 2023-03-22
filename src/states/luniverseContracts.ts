@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import { CONTRACTS } from "../constants";
 import Abi from "../abi";
+import { REACT_APP_LUNIVERSE_RPC_MAINNET } from "../constants/general";
 
 export const getContract = (chain, contractName: string, signer: any) => {
   if (!chain || !signer) return undefined;
@@ -26,7 +27,7 @@ export const getContractPk = () => {
   const mySigner = sessionStorage.getItem("mySigner");
   if (mySigner) {
     try {
-      const provider = new ethers.providers.JsonRpcBatchProvider(process.env.REACT_APP_LUNIVERSE_RPC_MAINNET);
+      const provider = new ethers.providers.JsonRpcBatchProvider(REACT_APP_LUNIVERSE_RPC_MAINNET);
       const signer = new ethers.Wallet(mySigner, provider);
       const contractData = CONTRACTS.find((obj) => obj.name === "sUSDC-G");
 

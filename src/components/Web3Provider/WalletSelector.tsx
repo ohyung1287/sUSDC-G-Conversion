@@ -4,6 +4,8 @@ import { useConnect } from "wagmi";
 import useControls from "states/controls";
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import { REACT_APP_LUNIVERSE_RPC_MAINNET } from "../../constants/general";
+
 interface WalletSelectorProps {
   closeModal?: () => void;
   setSessionData?: () => void;
@@ -38,7 +40,7 @@ const WalletSelector: React.FC<WalletSelectorProps | any> = (props) => {
 
   const validatePrivateKey = (key) => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider(process.env.REACT_APP_LUNIVERSE_RPC_MAINNET);
+      const provider = new ethers.providers.JsonRpcProvider(REACT_APP_LUNIVERSE_RPC_MAINNET);
       const wallet = new ethers.Wallet(key, provider);
       const signer = wallet.connect(provider);
       return signer;
